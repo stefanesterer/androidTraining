@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.stefan.myapplication.R;
 
@@ -27,4 +28,8 @@ public class ArticleFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_article, container, false);
     }
 
+    public void updateText(String content) {
+        TextView text = (TextView) getActivity().findViewById(R.id.article_fragment_text);
+        text.setText(content);
+    }
 }

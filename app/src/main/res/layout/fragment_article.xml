@@ -5,6 +5,7 @@
     tools:context="com.example.stefan.myapplication.fragment.ArticleFragment">
 
     <TextView
+        android:id="@+id/article_fragment_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/article_fragment_text" />
