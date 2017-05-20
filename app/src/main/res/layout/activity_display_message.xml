@@ -28,4 +28,15 @@
         app:layout_constraintVertical_bias="0.638">
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/fragment_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-13dp"
+        android:onClick="switchFragment"
+        android:text="Button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="43dp"
+        tools:text="@string/button_switch_fragment" />
 </android.support.constraint.ConstraintLayout>

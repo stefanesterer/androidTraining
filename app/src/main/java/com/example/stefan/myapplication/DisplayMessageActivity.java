@@ -2,10 +2,12 @@ package com.example.stefan.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.stefan.myapplication.fragment.ArticleFragment;
 import com.example.stefan.myapplication.fragment.HeadlinesFragment;
 
 public class DisplayMessageActivity extends AppCompatActivity {
@@ -27,6 +29,16 @@ public class DisplayMessageActivity extends AppCompatActivity {
         }
 
     }
+
+    public void switchFragment(View view)
+    {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_layout, new ArticleFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
+
 
 
 }

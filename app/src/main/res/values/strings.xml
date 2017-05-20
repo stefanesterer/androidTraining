@@ -4,4 +4,6 @@
     <string name="button_send">Send this!</string>
 
     <string name="hello_blank_fragment">Hello blank fragment. ganz ganz viel headline text</string>
+    <string name="article_fragment_text">article article article article article article article article article article article article </string>
+    <string name="button_switch_fragment">Switch Fragment!</string>
 </resources>
