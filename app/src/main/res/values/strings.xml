@@ -2,4 +2,6 @@
     <string name="app_name">My Application</string>
     <string name="edit_message">Edit this message</string>
     <string name="button_send">Send this!</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment. ganz ganz viel headline text</string>
 </resources>

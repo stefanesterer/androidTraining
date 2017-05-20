@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.stefan.myapplication.fragment.HeadlinesFragment;
+
 public class DisplayMessageActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +18,15 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(message);}
+        textView.setText(message);
+
+        if (findViewById(R.id.fragment_layout) != null) {
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_layout, new HeadlinesFragment()).commit();
+            }
+        }
+
+    }
+
 
 }
