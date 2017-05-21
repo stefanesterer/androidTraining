@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.stefan.myapplication.fragment.ArticleFragment;
 import com.example.stefan.myapplication.fragment.MainActivityFrame;
+import com.example.stefan.myapplication.fragment.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity implements MainActivityFrame.CommunicationFragmentListener{
 
@@ -46,6 +47,18 @@ public class MainActivity extends AppCompatActivity implements MainActivityFrame
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        MenuItem settingsItem = menu.findItem(R.id.action_settings);
+        settingsItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.left_fragment, new SettingsFragment())
+                        .commit();
+                return true;
+            }
+        });
+
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView =
