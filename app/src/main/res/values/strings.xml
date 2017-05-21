@@ -7,4 +7,6 @@
     <string name="article_fragment_text">article article article article article article article article article article article article </string>
     <string name="button_switch_fragment">Switch Fragment!</string>
     <string name="button_counter">myApplication,buttonCounter</string>
+^    <string name="action_favorite">Favs</string>
+    <string name="action_settings">Settings</string>
 </resources>

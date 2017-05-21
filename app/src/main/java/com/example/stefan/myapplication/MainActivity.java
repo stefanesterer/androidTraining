@@ -2,10 +2,13 @@ package com.example.stefan.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,9 +32,18 @@ public class MainActivity extends AppCompatActivity implements MainActivityFrame
             transaction.add(R.id.left_fragment, new MainActivityFrame());
             transaction.add(R.id.right_fragment, new ArticleFragment());
             transaction.commit();
+
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+            setSupportActionBar(myToolbar);
         }
 
         preferences = getPreferences(MODE_PRIVATE);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
     public void sendMessage(View view)
@@ -41,6 +53,25 @@ public class MainActivity extends AppCompatActivity implements MainActivityFrame
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Log.i(MainActivity.class.toString(), "settings");
+                return true;
+
+            case R.id.action_favorite:
+                Log.i(MainActivity.class.toString(), "favs");
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     @Override
