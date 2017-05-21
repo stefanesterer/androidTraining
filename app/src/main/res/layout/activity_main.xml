@@ -66,4 +66,12 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="26dp"></FrameLayout>
 
+    <TextView
+        android:id="@+id/button_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INITIAL"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="81dp" />
+
 </android.support.constraint.ConstraintLayout>
