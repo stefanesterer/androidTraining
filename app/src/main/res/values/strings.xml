@@ -9,4 +9,5 @@
     <string name="button_counter">myApplication,buttonCounter</string>
 ^    <string name="action_favorite">Favs</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
 </resources>
