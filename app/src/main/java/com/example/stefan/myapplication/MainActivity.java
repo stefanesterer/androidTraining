@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -62,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements MainActivityFrame
                 return false;
             }
         });
+
+        MenuItem shareItem = menu.findItem(R.id.action_share);
+        ShareActionProvider myShareActionProvider =
+                (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+        Intent myShareIntent = new Intent(Intent.ACTION_SEND);
+        myShareIntent.setType("image/*");
+        myShareIntent.putExtra(Intent.EXTRA_TEXT, "text text text");
+        myShareActionProvider.setShareIntent(myShareIntent);
 
         return super.onCreateOptionsMenu(menu);
     }
